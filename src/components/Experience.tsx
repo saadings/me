@@ -1,10 +1,18 @@
 "use client";
-import React from "react";
-import { HeroHighlight, Highlight } from "./ui/HeroHighlight";
+import dynamic from "next/dynamic";
+// const Component = dynamic(() => import("./ui/HeroHighlight"));
 import { motion } from "framer-motion";
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 import { Meteors } from "./ui/Meteors";
+import Image from "next/image";
+// const { Highlight } = dynamic(() => import("./ui/HeroHighlight"));
+const Highlight = dynamic(() =>
+  import("./ui/HeroHighlight").then((mod) => mod.Highlight),
+);
+const HeroHighlight = dynamic(() =>
+  import("./ui/HeroHighlight").then((mod) => mod.HeroHighlight),
+);
 
 const Experience = () => {
   return (
@@ -35,7 +43,7 @@ const Experience = () => {
       </div>
 
       <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">
-        {workExperience.map(({ id, title, desc, thumbnail, className }) => (
+        {workExperience.map(({ id, title, desc, thumbnail }) => (
           <Button
             key={id}
             borderRadius="3rem"
@@ -43,10 +51,12 @@ const Experience = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
           >
             <div className="flex flex-col gap-2 p-3 py-6 md:p-5 lg:flex-row lg:items-center lg:p-10">
-              <img
+              <Image
                 src={thumbnail}
                 alt={title}
-                className="w-16 md:w-20 lg:w-32"
+                className="aspect-square w-16 md:w-20 lg:w-32"
+                width={97}
+                height={87}
               />
               <div className="lg:ms-5">
                 <h1 className="text-start text-xl font-bold md:text-2xl">

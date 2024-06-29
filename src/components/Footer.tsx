@@ -3,15 +3,18 @@ import MagicButton from "./ui/MagicButton";
 import { Send } from "lucide-react";
 import { IconPosition } from "@/enums/magicButton";
 import { socialMedia } from "@/data";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer id="contact" className="mb-[100px] w-full pb-10 md:mb-5">
       <div className="absolute -bottom-72 left-0 min-h-96 w-full">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
           className="h-full w-full opacity-75"
+          width={1260}
+          height={863}
         />
       </div>
 
@@ -36,16 +39,31 @@ const Footer = () => {
       </div>
 
       <div className="mt-16 flex flex-col items-center justify-between md:flex-row">
-        <p className="text-sm font-light md:text-base md:font-normal">
-          Copyright © {new Date().getFullYear()} Saad Nauman
-        </p>
+        <div className="flex items-center space-x-4">
+          <Image
+            src={"/favicon.png"}
+            width={1024 / 15}
+            height={1024 / 15}
+            alt="logo"
+            className="rounded-full"
+          />
+          <p className="text-sm font-light md:text-base md:font-normal">
+            Copyright © {new Date().getFullYear()} - Saad Nauman
+          </p>
+        </div>
         <div className="flex items-center gap-6 max-md:mt-5 md:gap-3">
           {socialMedia.map(({ id, img }) => (
             <div
               key={id}
               className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-black-300 bg-black-200 saturate-150 backdrop-blur-lg backdrop-filter"
             >
-              <img src={img} alt={img} width={20} height={20} />
+              <Image
+                src={img}
+                alt={img}
+                width={20}
+                height={20}
+                className="aspect-square"
+              />
             </div>
           ))}
         </div>

@@ -11,6 +11,7 @@ import MagicButton from "@/components/ui/MagicButton";
 import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 import Lottie from "react-lottie";
 import { Copy } from "lucide-react";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -80,10 +81,12 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="absolute h-full w-full">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center")}
+              fill
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
             />
           )}
         </div>

@@ -1,7 +1,16 @@
+import dynamic from "next/dynamic";
+
 import { projects } from "@/data";
-import { TextRevealCard } from "./ui/TextRevealCard";
-import { PinContainer } from "@/components/ui/3dPin";
+const TextRevealCard = dynamic(() =>
+  import("@/components/ui/TextRevealCard").then((mod) => mod.TextRevealCard),
+);
+// import { PinContainer } from "@/components/ui/3dPin";
+
+const PinContainer = dynamic(() =>
+  import("@/components/ui/3dPin").then((mod) => mod.PinContainer),
+);
 import { Navigation } from "lucide-react";
+import Image from "next/image";
 
 const RecentProjects = () => {
   return (
@@ -26,9 +35,15 @@ const RecentProjects = () => {
             <PinContainer title={link.slice(31, link.length)} href={link}>
               <div className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
                 <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-xl">
-                  <img src="/bg.png" alt="bg-img" />
+                  <Image src="/bg.png" alt="bg-img" width={552} height={330} />
                 </div>
-                <img src={img} alt={title} className="absolute bottom-0 z-10" />
+                <Image
+                  src={img}
+                  alt={title}
+                  className="absolute bottom-0 z-10"
+                  width={464}
+                  height={300}
+                />
               </div>
               <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">
                 {title}
@@ -46,7 +61,13 @@ const RecentProjects = () => {
                       className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.2] bg-black lg:h-10 lg:w-10"
                       style={{ transform: `translateX(-${6 * index * 2}px)` }}
                     >
-                      <img src={icon} alt={icon} className="p-2" />
+                      <Image
+                        src={icon}
+                        alt={icon}
+                        className="p-2"
+                        width={37}
+                        height={34}
+                      />
                     </div>
                   ))}
                 </div>

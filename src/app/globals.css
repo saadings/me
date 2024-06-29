@@ -64,6 +64,41 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000319;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      #182848 0%,
+      #cbacf9 45% 55%,
+      #182848 100%
+    );
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      #182848 0%,
+      #cbacf9 25% 75%,
+      #182848 100%
+    );
+  }
+
+  ::selection {
+    background: #cbacf9;
+    color: #000;
+  }
 }
 
 @layer base {
