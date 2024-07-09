@@ -25,7 +25,7 @@ const Clients = () => {
   ];
 
   return (
-    <div id="testimonials" className="py-20">
+    <div id="testimonials" className="pb-0 pt-10 md:pb-10">
       <div className="flex justify-center">
         <TypewriterEffectSmooth words={words} />
       </div>

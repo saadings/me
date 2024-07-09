@@ -4,8 +4,6 @@ import { projects } from "@/data";
 const TextRevealCard = dynamic(() =>
   import("@/components/ui/TextRevealCard").then((mod) => mod.TextRevealCard),
 );
-// import { PinContainer } from "@/components/ui/3dPin";
-
 const PinContainer = dynamic(() =>
   import("@/components/ui/3dPin").then((mod) => mod.PinContainer),
 );
@@ -32,7 +30,7 @@ const RecentProjects = () => {
             key={id}
             className="flex h-[32rem] w-[80vw] items-center justify-center sm:h-[41rem] sm:w-[570px] lg:min-h-[32.5rem]"
           >
-            <PinContainer title={link.slice(31, link.length)} href={link}>
+            <PinContainer title={title} href={link}>
               <div className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
                 <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-xl">
                   <Image src="/bg.png" alt="bg-img" width={552} height={330} />
