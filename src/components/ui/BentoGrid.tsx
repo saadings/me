@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { IoCopyOutline } from "react-icons/io5";
 
 import { cn } from "@/utils/cn";
@@ -47,6 +47,14 @@ export const BentoGridItem = ({
   const rightLists = ["NodeJS", "NextJS", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (copied) {
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    }
+  }, [copied]);
 
   const defaultOptions = {
     loop: copied,
@@ -96,10 +104,11 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
+              width={351}
+              height={180}
               className="h-full w-full object-cover object-center"
             />
           )}
@@ -161,7 +170,12 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="relative mt-5">
               <div className={cn("absolute -bottom-5 right-0")}>
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
+                {/* <Image
+                  src="/confetti.gif"
+                  alt="confetti"
+                  fill
+                  className="relative z-10"
+                /> */}
                 <Lottie options={defaultOptions} height={200} width={400} />
               </div>
 
