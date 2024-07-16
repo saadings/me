@@ -166,23 +166,13 @@ export const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className="relative mt-5">
-              <div className="mt-5">
-                <MagicButton
-                  title={copied ? "Email is Copied!" : "Copy my Email Address"}
-                  icon={<Copy size={18} />}
-                  position="left"
-                  handleClick={handleCopy}
-                  otherClasses="!bg-[#161A31] z-20"
-                />
-              </div>
-
+            <div className="mt-5">
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my Email Address"}
                 icon={<Copy size={18} />}
                 position="left"
                 handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
+                otherClasses="!bg-[#161A31] z-20"
               />
             </div>
           )}
