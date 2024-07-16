@@ -211,7 +211,7 @@ export const socialMedia = [
   {
     id: 2,
     img: "/wha.svg",
-    link: "https://wa.me/03241110016",
+    link: "https://wa.me/923241110016",
   },
   {
     id: 3,
