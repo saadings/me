@@ -8,7 +8,6 @@ import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { TracingBeam } from "@/components/ui/TracingBeam";
 import { navItems } from "@/data";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -18,18 +17,14 @@ export default function Home() {
         <Hero />
         <TracingBeam className="">
           <Grid />
-          <Suspense fallback={<p>Loading Recent Projects</p>}>
-            <RecentProjects />
-          </Suspense>
-          <Suspense fallback={<p>Loading Clients</p>}>
-            <Clients />
-          </Suspense>
-          <Suspense fallback={<p>Loading Experience</p>}>
-            <Experience />
-          </Suspense>
-          <Suspense fallback={<p>Loading Approach</p>}>
-            <Approach />
-          </Suspense>
+
+          <RecentProjects />
+
+          <Clients />
+
+          <Experience />
+
+          <Approach />
         </TracingBeam>
         <Footer />
       </div>

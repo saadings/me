@@ -1,17 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-// import { IoCopyOutline } from "react-icons/io5";
+import Confetti from "react-confetti";
 
 import { cn } from "@/utils/cn";
 
-// import { BackgroundGradientAnimation } from "";
-import GridGlobe from "./GridGlobe";
-import animationData from "@/data/confetti.json";
 import MagicButton from "@/components/ui/MagicButton";
-import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
-import Lottie from "react-lottie";
 import { Copy } from "lucide-react";
 import Image from "next/image";
+import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
+import GridGlobe from "./GridGlobe";
 
 export const BentoGrid = ({
   className,
@@ -23,7 +20,6 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
         "md:grid-row-7 mx-auto grid grid-cols-1 gap-4 md:grid-cols-6 lg:grid-cols-5 lg:gap-8",
         className,
       )}
@@ -56,14 +52,14 @@ export const BentoGridItem = ({
     }
   }, [copied]);
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: copied,
+  //   autoplay: copied,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
 
   const handleCopy = () => {
     const text = "saadijutt007@gmail.com";
@@ -115,7 +111,9 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           // add background animation , remove the p tag
-          <BackgroundGradientAnimation></BackgroundGradientAnimation>
+          <BackgroundGradientAnimation>
+            {copied && <Confetti className="z-10 h-full w-full" />}
+          </BackgroundGradientAnimation>
         )}
 
         <div
@@ -169,14 +167,14 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="relative mt-5">
-              <div className={cn("absolute -bottom-5 right-0")}>
-                {/* <Image
-                  src="/confetti.gif"
-                  alt="confetti"
-                  fill
-                  className="relative z-10"
-                /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+              <div className="mt-5">
+                <MagicButton
+                  title={copied ? "Email is Copied!" : "Copy my Email Address"}
+                  icon={<Copy size={18} />}
+                  position="left"
+                  handleClick={handleCopy}
+                  otherClasses="!bg-[#161A31] z-20"
+                />
               </div>
 
               <MagicButton
