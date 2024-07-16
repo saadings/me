@@ -210,11 +210,16 @@ export const socialMedia = [
   },
   {
     id: 2,
-    img: "/twit.svg",
-    link: "/",
+    img: "/wha.svg",
+    link: "https://wa.me/03241110016",
   },
   {
     id: 3,
+    img: "/insta.svg",
+    link: "https://www.instagram.com/saadingzz/",
+  },
+  {
+    id: 4,
     img: "/link.svg",
     link: "https://www.linkedin.com/in/saad-nauman-4a4bb3241/",
   },
