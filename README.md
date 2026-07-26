@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://saadings.me" target="_blank">
+    <a href="https://me-lyart-alpha.vercel.app" target="_blank">
       <img src="https://github.com/adrianhajdin/portfolio/assets/151519281/c6ca3c03-6cb7-4f67-a9b9-a73da5bfa0d8" alt="Project Banner">
     </a>
   <br />
@@ -14,7 +14,7 @@
 
   <h3 align="center">A Modern Next.js Portfolio by</h3>
   <span >
-    <img src="https://www.saadings.me/favicon.png" alt="Saad Nauman" width="100px" height="100px" />
+    <img src="https://me-lyart-alpha.vercel.app/favicon.png" alt="Saad Nauman" width="100px" height="100px" />
     <h3>Saad Nauman</h1>
   <span/>
 </div>

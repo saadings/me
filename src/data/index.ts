@@ -77,7 +77,7 @@ export const projects = [
     des: "Explore the latest podcasts with AI-powered podcast generation and a seamless user experience.",
     img: "/p1.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/c.svg", "/three.svg"],
-    link: "https://podcastr-app.saadings.me",
+    link: "https://podcastr-plum.vercel.app",
   },
   {
     id: 2,
@@ -85,7 +85,7 @@ export const projects = [
     des: "Simplify your video conferencing experience with Zoom. Seamlessly connect with colleagues and friends.",
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://zoom-app.saadings.me",
+    link: "https://zoom-smoky.vercel.app",
   },
   {
     id: 3,
@@ -93,7 +93,7 @@ export const projects = [
     des: "Manage your finances with ease using Horizon. Track your transactions and grow your savings.",
     img: "/p3.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://horizon-app.saadings.me",
+    link: "https://horizon-topaz.vercel.app",
   },
   {
     id: 4,
@@ -101,7 +101,7 @@ export const projects = [
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://apple-app.saadings.me",
+    link: "https://apple-one-brown.vercel.app",
   },
 ];
 
